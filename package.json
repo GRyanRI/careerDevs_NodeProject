@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "DEBUG=app nodemon app.js",
+    "lint": "eslint app.js"
   },
   "author": "",
   "license": "ISC",
@@ -11,11 +13,27 @@
     "bootstrap": "^4.4.1",
     "chalk": "^3.0.0",
     "debug": "^4.1.1",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "morgan": "^1.9.1",
-    "popper.js": "^1.14.3"
+    "nodemon": "^2.0.2",
+    "popper.js": "^1.14.3",
+    "pug": "^2.0.4"
   },
-  "devDependencies": {},
-  "description": ""
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/mode_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4000
+    }
+  }
 }
